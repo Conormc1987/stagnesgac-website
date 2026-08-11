@@ -109,6 +109,52 @@ img {
   color: var(--gold-soft);
 }
 
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-socials a {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  border-radius: 50%;
+  color: var(--white);
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.header-socials a:hover {
+  transform: translateY(-2px);
+  background: var(--gold);
+  color: var(--black);
+}
+
+.header-socials svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
 .mobile-toggle {
   display: none;
   width: 44px;
@@ -362,6 +408,12 @@ section {
   text-transform: uppercase;
 }
 
+.media:not(.real-photo)::after,
+.card-media:not(.real-photo)::after,
+.gallery-item:not(.real-photo)::after {
+  display: none;
+}
+
 .real-photo {
   background-size: cover;
   background-position: center;
@@ -372,6 +424,62 @@ section {
   background-image:
     linear-gradient(0deg, rgba(0,0,0,0.22), rgba(0,0,0,0.04)),
     var(--team-hero-image);
+}
+
+.senior-football-photo {
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.18), rgba(0,0,0,0.02)),
+    url("assets/senior-football-team-2026.jpg");
+}
+
+.senior-hurling-photo {
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.16), rgba(0,0,0,0.01)),
+    url("assets/senior-hurling-team-2026.jpg");
+}
+
+.u8-football-photo {
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0.01)),
+    url("assets/u8-football-team-2026.jpg");
+}
+
+.u8-girls-football-photo {
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0.01)),
+    url("assets/u8-girls-football-team-2026.jpg");
+  background-position: center 32%;
+}
+
+.u8-girls-football-photo-2 {
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0.01)),
+    url("assets/u8-girls-football-team-2026-2.jpg");
+  background-position: center 58%;
+}
+
+.u10-boys-football-photo {
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0.01)),
+    url("assets/u10-boys-football-team-2026.jpg");
+  background-position: center 58%;
+}
+
+.u9-boys-football-photo {
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.12), rgba(0,0,0,0.01)),
+    url("assets/u9-boys-football-team-2026.jpg");
+  background-position: center 48%;
+}
+
+.senior-football-photo,
+.senior-hurling-photo,
+.u8-football-photo,
+.u8-girls-football-photo,
+.u8-girls-football-photo-2,
+.u9-boys-football-photo,
+.u10-boys-football-photo {
+  background-size: cover;
 }
 
 .real-photo::after {
@@ -510,6 +618,35 @@ section {
   border: 1px solid var(--grey-200);
   border-radius: var(--radius);
   background: var(--white);
+}
+
+.update-panel {
+  margin-top: 32px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  border: 1px solid rgba(201, 162, 39, 0.34);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 14px 44px rgba(0,0,0,0.07);
+}
+
+.update-panel h3,
+.update-panel p {
+  margin: 0;
+}
+
+.update-panel p {
+  max-width: 680px;
+  margin-top: 8px;
+  color: var(--grey-700);
+}
+
+.update-panel .actions {
+  flex: 0 0 auto;
+  margin-top: 0;
 }
 
 .date-box {
@@ -718,6 +855,36 @@ section {
   resize: vertical;
 }
 
+.form-card h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+}
+
+.form-intro,
+.form-note {
+  color: var(--grey-700);
+}
+
+.form-note {
+  min-height: 1.5em;
+  margin: 16px 0 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.text-link,
+.footer-grid a:hover {
+  color: var(--gold-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer .text-link,
+.site-footer a:hover {
+  color: var(--gold-soft);
+}
+
 .site-footer {
   padding: 54px 0 28px;
   background:
@@ -780,6 +947,10 @@ section {
     display: none;
   }
 
+  .header-socials {
+    margin-left: auto;
+  }
+
   .grid-5 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -802,6 +973,11 @@ section {
 
   .sponsor-cta-action {
     justify-content: flex-start;
+  }
+
+  .update-panel {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .grid-2,
@@ -841,9 +1017,19 @@ section {
     display: none;
   }
 
+  .header-socials a {
+    width: 36px;
+    height: 36px;
+  }
+
   section {
     padding: 76px 0;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
 }
 
 .photo-teams,

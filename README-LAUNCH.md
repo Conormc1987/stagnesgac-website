@@ -1,18 +1,19 @@
-# St Agnes GAC Website Launch Notes
+# St Agnes GAC Website
 
-This folder is the deployable website.
+Official static website for St Agnes GAC Belfast, hosted through GitHub Pages at `stagnesgac.com`.
 
-## Before Going Live
+## Publishing Updates
 
-1. Replace the Clubforce placeholder links in `membership.html` with the real St Agnes Clubforce membership link.
-2. Replace the placeholder contact details with the club email, phone number and address.
-3. Add more club photos when available.
-4. Add real sponsor logos.
-5. Add the real domain to Netlify after the first deploy.
+Upload changed files to the `main` branch of the `stagnesgac-website` GitHub repository. GitHub Pages publishes the update automatically.
 
-## Recommended Hosting
+Keep the `CNAME` file in the repository root. It connects the site to `stagnesgac.com`.
 
-Use Netlify for the first launch because this website is a static site. The simplest option is Netlify Drop: drag this whole folder into Netlify and connect the IONOS domain afterwards.
+## Content Still To Add
+
+1. Replace the general Clubforce links with the public Naomh Una CLG membership link when available.
+2. Add confirmed fixtures, results and news during the season.
+3. Add official team, juvenile, history and community photographs.
+4. Add approved sponsor logos and website links.
 
 ## Main File
 
