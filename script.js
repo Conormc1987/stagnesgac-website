@@ -8,6 +8,16 @@ if (toggle) {
   });
 }
 
+// Keep the main navigation consistent across every page.
+document.querySelectorAll(".nav-links").forEach((nav) => {
+  const newsLink = nav.querySelector('a[href="news.html"]');
+  const aboutLink = nav.querySelector('a[href="about.html"]');
+  if (newsLink) {
+    newsLink.textContent = "Latest News";
+    if (aboutLink) aboutLink.insertAdjacentElement("afterend", newsLink);
+  }
+});
+
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
