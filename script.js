@@ -1,5 +1,13 @@
 const toggle = document.querySelector(".mobile-toggle");
 
+// Keep the main navigation consistent across every page.
+document.querySelectorAll(".nav-links").forEach((nav) => {
+  const about = nav.querySelector('a[href="about.html"]');
+  const news = nav.querySelector('a[href="news.html"]');
+  if (news) news.textContent = "Latest News";
+  if (about && news) about.insertAdjacentElement("afterend", news);
+});
+
 if (toggle) {
   toggle.addEventListener("click", () => {
     const isOpen = document.body.classList.toggle("menu-open");
@@ -7,16 +15,6 @@ if (toggle) {
     toggle.textContent = isOpen ? "Close" : "Menu";
   });
 }
-
-// Keep the main navigation consistent across every page.
-document.querySelectorAll(".nav-links").forEach((nav) => {
-  const newsLink = nav.querySelector('a[href="news.html"]');
-  const aboutLink = nav.querySelector('a[href="about.html"]');
-  if (newsLink) {
-    newsLink.textContent = "Latest News";
-    if (aboutLink) aboutLink.insertAdjacentElement("afterend", newsLink);
-  }
-});
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
