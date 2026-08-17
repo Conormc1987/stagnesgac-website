@@ -1,5 +1,41 @@
 const toggle = document.querySelector(".mobile-toggle");
 
+// Apply a tighter, more consistent vertical rhythm across the whole website.
+const compactLayoutStyles = document.createElement("style");
+compactLayoutStyles.textContent = `
+  .page-hero {
+    min-height: 320px;
+  }
+
+  .page-hero-inner {
+    padding: 52px 0 44px;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  .split,
+  .split.reverse {
+    gap: 48px;
+  }
+
+  @media (max-width: 640px) {
+    .page-hero {
+      min-height: 280px;
+    }
+
+    .page-hero-inner {
+      padding: 40px 0 34px;
+    }
+
+    section {
+      padding: 52px 0;
+    }
+  }
+`;
+document.head.appendChild(compactLayoutStyles);
+
 // Keep the main navigation consistent across every page.
 document.querySelectorAll(".nav-links").forEach((nav) => {
   const about = nav.querySelector('a[href="about.html"]');
