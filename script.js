@@ -41,7 +41,7 @@ document.querySelectorAll(".nav-links").forEach((nav) => {
 
     const dropdown = document.createElement("div");
     dropdown.className = "teams-dropdown";
-    dropdown.innerHTML = '<a href="mens-senior-football.html">Men\'s Senior Football</a><a href="gaelic-for-mothers.html">Gaelic for Mothers &amp; Others</a><a href="senior-hurling.html">Senior Hurling</a><a href="juvenile-teams.html">Juveniles</a>';
+    dropdown.innerHTML = '<a href="mens-senior-football.html">Men\'s Senior Football</a><a href="gaelic-for-mothers.html">Gaelic for Mothers &amp; Others</a><a href="senior-hurling.html">Men\'s Senior Hurling</a><a href="juvenile-teams.html">Juveniles</a>';
     wrapper.appendChild(dropdown);
   }
 });
