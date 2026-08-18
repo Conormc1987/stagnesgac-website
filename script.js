@@ -6,6 +6,7 @@ compactLayoutStyles.textContent = `
   .page-hero-inner { padding: 52px 0 44px; }
   section { padding: 64px 0; }
   .split, .split.reverse { gap: 48px; }
+  .senior-football-photo, .senior-hurling-photo { filter: none !important; }
   .teams-menu { position: relative; display: inline-flex; align-items: center; }
   .teams-menu > a::after { content: " ▾"; font-size: .72em; }
   .teams-dropdown { position:absolute; top:100%; left:50%; transform:translateX(-50%); min-width:250px; padding:10px; border-radius:12px; background:#111; border:1px solid rgba(212,175,55,.45); box-shadow:0 18px 45px rgba(0,0,0,.28); opacity:0; visibility:hidden; z-index:1000; }
