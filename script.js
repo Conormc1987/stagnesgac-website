@@ -42,7 +42,7 @@ document.querySelectorAll(".nav-links").forEach((nav) => {
 
     const dropdown = document.createElement("div");
     dropdown.className = "teams-dropdown";
-    dropdown.innerHTML = '<a href="mens-senior-football.html">Men\'s Senior Football</a><a href="gaelic-for-mothers.html">Gaelic for Mothers &amp; Others</a><a href="senior-hurling.html">Men\'s Senior Hurling</a><a href="juvenile-teams.html">Juveniles</a>';
+    dropdown.innerHTML = '<a href="mens-senior-football.html">Men\'s Senior Football</a><a href="gaelic-for-mothers.html">Gaelic for Mothers &amp; Others</a><a href="senior-hurling.html">Men\'s Senior Hurling</a><a href="juveniles.html">Juveniles</a>';
     wrapper.appendChild(dropdown);
   }
 });
@@ -56,7 +56,7 @@ if (toggle) {
 }
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
-const teamPages = ["mens-senior-football.html", "gaelic-for-mothers.html", "senior-hurling.html", "juvenile-teams.html"];
+const teamPages = ["mens-senior-football.html", "gaelic-for-mothers.html", "senior-hurling.html", "juveniles.html"];
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   const linkPage = link.getAttribute("href");
