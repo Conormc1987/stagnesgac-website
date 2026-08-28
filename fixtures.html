@@ -4,20 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fixtures & Results | St Agnes GAC Belfast</title>
-  <meta name="description" content="Fixtures, results and club events for St Agnes GAC Belfast.">
+  <meta name="description" content="Fixtures and results for St Agnes GAC Belfast.">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .featured-fixture-section{padding:64px 0;background:linear-gradient(135deg,#f5f0df 0%,#fff 48%,#f1e5b8 100%);text-align:center;overflow:hidden}
-    .featured-fixture-section .section-title{margin-left:auto;margin-right:auto}
-    .featured-fixture{position:relative;max-width:900px;margin:32px auto 0;padding:52px 60px;border-radius:28px;background:#111;color:#fff;box-shadow:0 24px 60px rgba(0,0,0,.2);border:3px solid #d4af37;overflow:hidden;text-align:center}
-    .featured-fixture:before,.featured-fixture:after{content:"";position:absolute;border-radius:50%;background:rgba(212,175,55,.13)}
-    .featured-fixture:before{width:300px;height:300px;top:-170px;right:-90px}.featured-fixture:after{width:220px;height:220px;bottom:-130px;left:-80px}
-    .fixture-badge{display:inline-block;padding:9px 18px;border-radius:999px;background:#d4af37;color:#111;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;margin-bottom:24px}
-    .fixture-teams{position:relative;z-index:1;margin:0 0 10px;font-family:Georgia,"Times New Roman",serif}
-    .fixture-home,.fixture-away{display:block;font-size:clamp(2.4rem,5.5vw,4.7rem);font-weight:700;line-height:1.12;color:#fff}
-    .fixture-score{color:#d4af37;white-space:nowrap}
-    .fixture-away{margin-top:12px}
-    @media(max-width:700px){.featured-fixture{padding:38px 22px}.featured-fixture-section{padding:50px 0}.fixture-home,.fixture-away{font-size:clamp(2rem,9vw,3.2rem)}}
+    .fixtures-results-section{padding:64px 0;background:linear-gradient(135deg,#f5f0df 0%,#fff 48%,#f1e5b8 100%)}
+    .fixtures-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+    .fixtures-column{text-align:center}
+    .fixtures-column .section-title{margin-left:auto;margin-right:auto}
+    .match-card{position:relative;margin-top:28px;padding:38px 30px;border-radius:24px;background:#111;color:#fff;box-shadow:0 18px 45px rgba(0,0,0,.18);border:3px solid #d4af37;overflow:hidden;text-align:center}
+    .match-card:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(212,175,55,.12);top:-130px;right:-80px}
+    .match-badge{position:relative;z-index:1;display:inline-block;padding:8px 15px;border-radius:999px;background:#d4af37;color:#111;font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:.7rem;margin-bottom:20px}
+    .match-teams{position:relative;z-index:1;font-family:Georgia,"Times New Roman",serif}
+    .match-team{display:block;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;line-height:1.15;color:#fff}
+    .match-team+.match-team{margin-top:10px}
+    .match-score{color:#d4af37;white-space:nowrap}
+    .match-details{position:relative;z-index:1;margin-top:22px;color:#fff;font-weight:700;line-height:1.7}
+    .empty-note{position:relative;z-index:1;color:#ddd;font-size:1.05rem;margin:10px 0 0}
+    @media(max-width:800px){.fixtures-results-grid{grid-template-columns:1fr;gap:50px}.fixtures-results-section{padding:50px 0}.match-card{padding:34px 20px}}
   </style>
   <link rel="icon" type="image/png" href="assets/st-agnes-crest.png">
 </head>
@@ -35,30 +38,32 @@
       <div class="page-hero-inner">
         <p class="eyebrow">Fixtures & Results</p>
         <h1>Club fixtures and results for the 2026 season.</h1>
-        <p>Follow St Agnes fixtures, results, training nights and key club dates.</p>
+        <p>Follow St Agnes fixtures and results throughout the season.</p>
       </div>
     </section>
-    <section class="featured-fixture-section">
+    <section class="fixtures-results-section">
       <div class="container">
-        <p class="eyebrow">Intermediate Football Championship · Round 3</p>
-        <h2 class="section-title">Latest result.</h2>
-        <article class="featured-fixture">
-          <div class="fixture-badge">Friday 21 August 2026</div>
-          <div class="fixture-teams">
-            <span class="fixture-home">St Agnes GAC <span class="fixture-score">2-12</span></span>
-            <span class="fixture-away">Davitts <span class="fixture-score">3-13</span></span>
+        <div class="fixtures-results-grid">
+          <div class="fixtures-column">
+            <p class="eyebrow">Coming Up</p>
+            <h2 class="section-title">Fixtures.</h2>
+            <article class="match-card">
+              <div class="match-badge">Next Fixture</div>
+              <p class="empty-note">Next fixture will be added here.</p>
+            </article>
           </div>
-        </article>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <p class="eyebrow">Recent Results</p>
-        <h2 class="section-title">Latest results.</h2>
-        <div class="grid-3" style="margin-top:32px">
-          <article class="card"><div class="card-body"><h3>Senior Football</h3><p>St Agnes GAC 2-12<br>Davitts 3-13</p></div></article>
-          <article class="card"><div class="card-body"><h3>Ladies Football</h3><p>Ladies football results and short match notes will be posted here during the season.</p></div></article>
-          <article class="card"><div class="card-body"><h3>Juvenile Teams</h3><p>Juvenile updates, blitz reports and weekend round-ups will be shared here.</p></div></article>
+          <div class="fixtures-column">
+            <p class="eyebrow">Latest</p>
+            <h2 class="section-title">Results.</h2>
+            <article class="match-card">
+              <div class="match-badge">Intermediate Football Championship · Round 3</div>
+              <div class="match-teams">
+                <span class="match-team">St Agnes GAC <span class="match-score">2-12</span></span>
+                <span class="match-team">Davitts <span class="match-score">3-13</span></span>
+              </div>
+              <div class="match-details">Friday 21 August 2026<br>Woodlands</div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
