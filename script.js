@@ -74,10 +74,36 @@ document.querySelectorAll(".nav-links").forEach((nav) => {
 });
 
 if (toggle) {
+  const mobileNav = document.querySelector(".nav-links");
+  toggle.setAttribute("aria-expanded", "false");
+  if (mobileNav) {
+    mobileNav.id = mobileNav.id || "site-navigation";
+    toggle.setAttribute("aria-controls", mobileNav.id);
+  }
+
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+    toggle.textContent = "Menu";
+  };
+
   toggle.addEventListener("click", () => {
     const isOpen = document.body.classList.toggle("menu-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
     toggle.textContent = isOpen ? "Close" : "Menu";
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1040) closeMenu();
   });
 }
 
