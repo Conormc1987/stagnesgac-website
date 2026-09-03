@@ -190,3 +190,13 @@ if (contactForm) {
     window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
+const anniversaryClubPhoto = document.querySelector('[data-label="75 years of St Agnes pride"]');
+if (anniversaryClubPhoto) {
+  anniversaryClubPhoto.style.backgroundImage = 'url("assets/senior-football-team-2026.jpg")';
+  anniversaryClubPhoto.style.backgroundSize = "cover";
+  anniversaryClubPhoto.style.backgroundPosition = "center";
+  anniversaryClubPhoto.style.backgroundRepeat = "no-repeat";
+  anniversaryClubPhoto.setAttribute("role", "img");
+  anniversaryClubPhoto.setAttribute("aria-label", "St Agnes GAC club team photo");
+}
