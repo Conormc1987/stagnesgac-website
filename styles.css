@@ -115,3 +115,39 @@
   .sponsor-card{min-height:0!important;padding:28px 20px!important}
   .form-card{padding:20px}
 }
+
+
+/* iPhone full-screen navigation fix */
+@media(max-width:1040px){
+  .site-header{
+    background:#050505;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    overflow:visible
+  }
+  .nav-links{
+    position:fixed!important;
+    inset:68px 0 0 0!important;
+    width:100%;
+    height:calc(100vh - 68px);
+    height:calc(100dvh - 68px);
+    max-height:none!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    overflow-x:hidden;
+    overflow-y:auto!important;
+    -webkit-overflow-scrolling:touch;
+    padding:14px 18px calc(34px + env(safe-area-inset-bottom))!important;
+    background:#050505!important;
+    z-index:9999
+  }
+  body.menu-open .nav-links{display:flex!important}
+  .nav-links>*{flex:0 0 auto}
+  .nav-links>a,
+  .nav-links>.about-menu>a,
+  .nav-links>.development-menu>a,
+  .nav-links>.teams-menu>a{
+    min-height:52px!important;
+    width:100%
+  }
+}
