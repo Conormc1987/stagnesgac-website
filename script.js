@@ -25,9 +25,11 @@ compactLayoutStyles.textContent = `
     .menu-open .nav-links { transform:translateX(0); opacity:1; visibility:visible; }
     .nav-links > a, .nav-links > div > a { display:block; width:100%; padding:14px 4px; border-bottom:1px solid rgba(255,255,255,.11); color:#fff; font-size:1.05rem; }
     .teams-menu, .about-menu, .development-menu { display:block; width:100%; }
-    .teams-menu > a::after, .about-menu > a::after, .development-menu > a::after { content:""; }
-    .teams-dropdown, .about-dropdown, .development-dropdown { position:static; transform:none; min-width:0; width:100%; padding:4px 0 8px 16px; border:0; box-shadow:none; background:transparent; opacity:1; visibility:visible; }
-    .teams-dropdown a, .about-dropdown a, .development-dropdown a { padding:9px 4px; color:rgba(255,255,255,.72) !important; white-space:normal; font-size:.92rem; }
+    .teams-menu > a::after, .about-menu > a::after, .development-menu > a::after { content:"＋"; float:right; font-size:1.1rem; line-height:1; }
+    .teams-menu.submenu-open > a::after, .about-menu.submenu-open > a::after, .development-menu.submenu-open > a::after { content:"−"; }
+    .teams-dropdown, .about-dropdown, .development-dropdown { position:static; transform:none; min-width:0; width:100%; max-height:0; overflow:hidden; padding:0 0 0 16px; border:0; box-shadow:none; background:transparent; opacity:0; visibility:hidden; transition:max-height .24s ease,opacity .2s ease,padding .2s ease; }
+    .teams-menu.submenu-open .teams-dropdown, .about-menu.submenu-open .about-dropdown, .development-menu.submenu-open .development-dropdown { max-height:480px; padding:4px 0 8px 16px; opacity:1; visibility:visible; }
+    .teams-dropdown a, .about-dropdown a, .development-dropdown a { padding:10px 4px; color:rgba(255,255,255,.72) !important; white-space:normal; font-size:.92rem; }
     .split, .split.reverse { grid-template-columns:1fr; gap:30px; }
     .split.reverse > div:first-child { order:0; }
     .grid-4, .grid-5 { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -81,7 +83,7 @@ document.querySelectorAll(".nav-links").forEach((nav) => {
     wrapper.appendChild(about);
     const dropdown = document.createElement("div");
     dropdown.className = "about-dropdown";
-    dropdown.innerHTML = '<a href="history.html">History of St Agnes GAC</a><a href="roll-of-honour.html">Roll of Honour</a>';
+    dropdown.innerHTML = '<a class="menu-overview" href="about.html">About Overview</a><a href="history.html">History of St Agnes GAC</a><a href="roll-of-honour.html">Roll of Honour</a>';
     wrapper.appendChild(dropdown);
   }
 
@@ -94,7 +96,7 @@ document.querySelectorAll(".nav-links").forEach((nav) => {
     developmentWrapper.appendChild(developmentLink);
     const developmentDropdown = document.createElement("div");
     developmentDropdown.className = "development-dropdown";
-    developmentDropdown.innerHTML = '<a href="st-agnes-2030.html#future">Future of Our Club</a><a href="st-agnes-2030.html#south-link">South Link Development</a><a href="st-agnes-2030.html#development-plan">Club Development Plan</a><a href="st-agnes-2030.html#support">How to Support</a>';
+    developmentDropdown.innerHTML = '<a class="menu-overview" href="st-agnes-2030.html">St Agnes 2030 Overview</a><a href="st-agnes-2030.html#future">Future of Our Club</a><a href="st-agnes-2030.html#south-link">South Link Development</a><a href="st-agnes-2030.html#development-plan">Club Development Plan</a><a href="st-agnes-2030.html#support">How to Support</a>';
     developmentWrapper.appendChild(developmentDropdown);
     if (news) news.insertAdjacentElement("afterend", developmentWrapper);
     else if (about) about.closest('.about-menu').insertAdjacentElement("afterend", developmentWrapper);
@@ -109,9 +111,38 @@ document.querySelectorAll(".nav-links").forEach((nav) => {
     wrapper.appendChild(teamsLink);
     const dropdown = document.createElement("div");
     dropdown.className = "teams-dropdown";
-    dropdown.innerHTML = '<a href="mens-senior-football.html">Men\'s Senior Football</a><a href="gaelic-for-mothers.html">Gaelic for Mothers &amp; Others</a><a href="senior-hurling.html">Men\'s Senior Hurling</a><a href="juveniles.html">Juveniles</a>';
+    dropdown.innerHTML = '<a class="menu-overview" href="teams.html">All Teams</a><a href="mens-senior-football.html">Men\'s Senior Football</a><a href="gaelic-for-mothers.html">Gaelic for Mothers &amp; Others</a><a href="senior-hurling.html">Men\'s Senior Hurling</a><a href="juveniles.html">Juveniles</a>';
     wrapper.appendChild(dropdown);
   }
+});
+
+
+const mobileMenuGroups = [...document.querySelectorAll(".about-menu, .development-menu, .teams-menu")];
+
+const closeMobileSubmenus = (except = null) => {
+  mobileMenuGroups.forEach((group) => {
+    if (group === except) return;
+    group.classList.remove("submenu-open");
+    const heading = group.querySelector(":scope > a");
+    if (heading) heading.setAttribute("aria-expanded", "false");
+  });
+};
+
+mobileMenuGroups.forEach((group, index) => {
+  const heading = group.querySelector(":scope > a");
+  const dropdown = group.querySelector(":scope > div");
+  if (!heading || !dropdown) return;
+  dropdown.id = dropdown.id || `mobile-submenu-${index + 1}`;
+  heading.setAttribute("aria-controls", dropdown.id);
+  heading.setAttribute("aria-expanded", "false");
+  heading.addEventListener("click", (event) => {
+    if (window.innerWidth > 1040) return;
+    event.preventDefault();
+    const willOpen = !group.classList.contains("submenu-open");
+    closeMobileSubmenus(group);
+    group.classList.toggle("submenu-open", willOpen);
+    heading.setAttribute("aria-expanded", String(willOpen));
+  });
 });
 
 if (toggle) {
@@ -127,6 +158,7 @@ if (toggle) {
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open menu");
     toggle.textContent = "Menu";
+    closeMobileSubmenus();
   };
 
   toggle.addEventListener("click", () => {
