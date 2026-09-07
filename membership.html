@@ -7,6 +7,16 @@
   <meta name="description" content="Join the Club Belfast through Clubforce membership and payments.">
   <link rel="stylesheet" href="styles.css?v=20260904">
   <link rel="icon" type="image/png" href="assets/st-agnes-crest.png">
+  <style>
+    .membership-simple{min-height:calc(100vh - 76px);display:grid;align-items:center;padding:90px 0;background:linear-gradient(135deg,rgba(201,162,39,.16),transparent 38%),#090909;color:#fff}
+    .membership-panel{max-width:900px;padding:clamp(30px,6vw,64px);border:1px solid rgba(201,162,39,.38);border-radius:20px;background:rgba(255,255,255,.06);box-shadow:0 24px 70px rgba(0,0,0,.28)}
+    .membership-panel h1{max-width:780px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.92}
+    .membership-panel .intro{max-width:760px;margin:26px 0 0;color:rgba(255,255,255,.82);font-size:1.15rem;line-height:1.7}
+    .membership-assurances{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0;list-style:none}
+    .membership-assurances li{padding:9px 14px;border:1px solid rgba(201,162,39,.45);border-radius:999px;color:#f1df9a;font-weight:800}
+    .membership-panel .actions{margin-top:34px}
+    @media(max-width:640px){.membership-simple{padding:56px 0}.membership-panel{padding:28px 22px}.membership-panel .button{width:100%}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -18,45 +28,19 @@
     </nav>
   </header>
   <main>
-    <section class="page-hero photo-membership">
-      <div class="page-hero-inner">
-        <p class="eyebrow">Membership</p>
-        <h1>Join St Agnes GAC through Clubforce.</h1>
-        <p>Register as a player, parent, family member, volunteer or supporter through our secure Clubforce membership system.</p>
-        <div class="actions"><a class="button white" href="https://clubforce.com/" target="_blank" rel="noopener">Open Clubforce Membership</a></div>
-      </div>
-    </section>
-    <section>
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Join The Club</p>
-          <h2 class="section-title">There is a place for you here.</h2>
-          <p class="section-copy">Whether you are registering your child, joining as a player, returning to the club, supporting as a family member or becoming a social member, St Agnes GAC welcomes you.</p>
-          <p class="section-copy">Membership and payments are handled securely through Clubforce. Use the Clubforce membership link to register securely online.</p>
-          <div class="actions"><a class="button black" href="https://clubforce.com/" target="_blank" rel="noopener">Open Clubforce Membership</a><a class="button outline-dark" href="contact.html">Ask A Question</a></div>
-        </div>
-        <div class="media light-media real-photo senior-photo" data-label="Real photo: St Agnes Senior Football Team 2025"></div>
-      </div>
-    </section>
-    <section class="light">
+    <section class="membership-simple">
       <div class="container">
-        <p class="eyebrow">Membership Options</p>
-        <h2 class="section-title">Choose the membership that fits you.</h2>
-        <div class="grid-3" style="margin-top:32px">
-          <article class="card"><div class="card-body"><h3>Juvenile Membership</h3><p>For young players starting or continuing their journey with St Agnes.</p></div></article>
-          <article class="card"><div class="card-body"><h3>Adult Player Membership</h3><p>For players representing St Agnes across club teams.</p></div></article>
-          <article class="card"><div class="card-body"><h3>Family & Supporter Membership</h3><p>For parents, families, supporters and members who want to stay close to the club.</p></div></article>
+        <div class="membership-panel">
+          <p class="eyebrow">Membership</p>
+          <h1>Join St Agnes GAC.</h1>
+          <p class="intro">There is a place for everyone at St Agnes—young players, adult players, parents, families, volunteers, returning members and supporters. Becoming a member helps support our teams, coaching, facilities and the future of the club.</p>
+          <p class="intro">All official membership registrations and payments are completed safely online through Clubforce. Simply follow the link, choose the membership option that suits you, enter your details and pay securely.</p>
+          <ul class="membership-assurances" aria-label="Clubforce membership benefits"><li>Secure online payments</li><li>Simple registration</li><li>Safe member details</li></ul>
+          <div class="actions"><a class="button white" href="https://clubforce.com/" target="_blank" rel="noopener">Join Through Clubforce</a></div>
         </div>
       </div>
     </section>
-    <section class="black-band">
-      <div class="container split reverse">
-        <div class="media" data-label="Families and young players welcome"></div>
-        <div><p class="eyebrow">Clubforce Payments</p><h2 class="section-title">Simple, secure and ready for members.</h2><p class="section-copy">Clubforce remains the place for official St Agnes memberships and payments. This website presents the club professionally and sends members to Clubforce when they are ready to join.</p></div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
+  </main> <footer class="site-footer">
     <div class="container footer-grid">
       <div><a class="brand" href="index.html"><span class="crest">ST<br>AGNES</span><span>St Agnes GAC Belfast</span></a><p>A proud Belfast GAA club built on history, youth development, family, volunteers and community spirit.</p></div>
       <div><h4>Membership</h4><ul><li>Juvenile</li><li>Adult Player</li><li>Family</li></ul></div>
