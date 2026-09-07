@@ -92,7 +92,7 @@ document.querySelectorAll(".nav-links").forEach((nav) => {
     developmentWrapper.className = "development-menu";
     const developmentLink = document.createElement("a");
     developmentLink.href = "st-agnes-2030.html";
-    developmentLink.textContent = "St Agnes 2030";
+    developmentLink.textContent = "St Agnes 2030 Plan";
     developmentWrapper.appendChild(developmentLink);
     const developmentDropdown = document.createElement("div");
     developmentDropdown.className = "development-dropdown";
