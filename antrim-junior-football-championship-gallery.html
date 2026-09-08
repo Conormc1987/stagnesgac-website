@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antrim Junior Football Championship Gallery | St Agnes GAC</title>
+  <meta name="description" content="Photographs celebrating St Agnes GAC's 2025 Antrim Junior Football Championship victory.">
+  <link rel="stylesheet" href="styles.css?v=20260907-tight">
+  <link rel="icon" type="image/png" href="assets/st-agnes-crest.png">
+  <style>
+    .championship-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px}
+    .championship-gallery button{padding:0;border:0;border-radius:16px;overflow:hidden;background:#111;cursor:zoom-in;box-shadow:0 14px 36px rgba(0,0,0,.12)}
+    .championship-gallery img{width:100%;height:300px;object-fit:cover;display:block}
+    .gallery-lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.94)}
+    .gallery-lightbox.open{display:flex}.gallery-lightbox img{max-width:94vw;max-height:90vh;object-fit:contain}
+    .gallery-close{position:absolute;top:18px;right:22px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#111;font-size:28px;cursor:pointer}
+    @media(max-width:850px){.championship-gallery{grid-template-columns:1fr}.championship-gallery img{height:auto}}
+  </style>
+</head>
+<body>
+<header class="site-header"><nav class="nav"><a class="brand" href="index.html"><span class="crest">ST<br>AGNES</span><span>St Agnes GAC</span></a><div class="nav-links"><a href="about.html">About</a><a href="membership.html">Membership</a><a href="teams.html">Teams</a><a href="fixtures.html">Fixtures &amp; Results</a><a href="news.html">News</a><a href="sponsors.html">Sponsors</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div><a class="button white" href="membership.html">Join the Club</a><button class="mobile-toggle" aria-label="Open menu">Menu</button></nav></header>
+<main>
+  <section class="page-hero photo-gallery"><div class="page-hero-inner"><p class="eyebrow">Championship Gallery</p><h1>Antrim Junior Football Championship</h1><p>Celebrating the Aggies’ historic 2025 championship victory.</p></div></section>
+  <section><div class="container"><p class="eyebrow">2025 Champions</p><h2 class="section-title">A day to remember.</h2><p class="section-copy">Explore photographs from St Agnes GAC’s Antrim Junior Football Championship triumph.</p><div class="championship-gallery"><button type="button" aria-label="Enlarge championship celebration photograph"><img src="assets/aggies-junior-championship-2025.jpeg" alt="St Agnes GAC celebrating the 2025 Antrim Junior Football Championship victory"></button></div><div class="actions"><a class="button outline-dark" href="gallery.html">Back to Photo Archive</a></div></div></section>
+</main>
+<div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged championship photograph"><button class="gallery-close" type="button" aria-label="Close photograph">×</button><img src="" alt=""></div>
+<footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="crest">ST<br>AGNES</span><span>St Agnes GAC Belfast</span></a><p>A proud Belfast GAA club built on history, youth development, family, volunteers and community spirit.</p></div><div><h4>Gallery</h4><ul><li><a href="gallery.html">Photo Archive</a></li><li>Championship Memories</li></ul></div><div><h4>Club</h4><ul><li><a href="about.html">About</a></li><li><a href="teams.html">Teams</a></li></ul></div><div><h4>Follow</h4><ul><li><a href="https://www.facebook.com/NaomhUnaCLCG/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/naomhunaclg/" target="_blank" rel="noopener">Instagram</a></li></ul></div></div><div class="container footer-bottom"><span>&copy; 2026 St Agnes GAC.</span><span>Championship memories.</span></div></footer>
+<script src="script.js?v=20260904-accordion"></script><script>const lb=document.getElementById('gallery-lightbox'),full=lb.querySelector('img');document.querySelectorAll('.championship-gallery img').forEach(img=>img.addEventListener('click',()=>{full.src=img.src;full.alt=img.alt;lb.classList.add('open');document.body.style.overflow='hidden'}));function closeGallery(){lb.classList.remove('open');full.src='';document.body.style.overflow=''}lb.querySelector('.gallery-close').addEventListener('click',closeGallery);lb.addEventListener('click',e=>{if(e.target===lb)closeGallery()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGallery()});</script>
+</body>
+</html>
