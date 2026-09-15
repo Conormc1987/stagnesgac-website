@@ -9,10 +9,10 @@ compactLayoutStyles.textContent = `
   .senior-football-photo, .senior-hurling-photo { filter: none !important; }
   .teams-menu, .about-menu, .development-menu { position: relative; display: inline-flex; align-items: center; }
   .teams-menu > a::after, .about-menu > a::after, .development-menu > a::after { content: " ▾"; font-size: .72em; }
-  .teams-dropdown, .about-dropdown, .development-dropdown { position:absolute; top:100%; left:50%; transform:translateX(-50%); min-width:250px; padding:10px; border-radius:12px; background:#111; border:1px solid rgba(212,175,55,.45); box-shadow:0 18px 45px rgba(0,0,0,.28); opacity:0; visibility:hidden; z-index:1000; }
+  .teams-dropdown, .about-dropdown, .development-dropdown { position:absolute; top:100%; left:50%; transform:translateX(-50%); min-width:250px; padding:10px; border-radius:12px; background:#111; border:1px solid rgba(184,184,184,.45); box-shadow:0 18px 45px rgba(0,0,0,.28); opacity:0; visibility:hidden; z-index:1000; }
   .teams-menu:hover .teams-dropdown, .teams-menu:focus-within .teams-dropdown, .about-menu:hover .about-dropdown, .about-menu:focus-within .about-dropdown, .development-menu:hover .development-dropdown, .development-menu:focus-within .development-dropdown { opacity:1; visibility:visible; }
   .teams-dropdown a, .about-dropdown a, .development-dropdown a { display:block; padding:11px 13px; border-radius:8px; color:#fff !important; white-space:nowrap; text-decoration:none; }
-  .teams-dropdown a:hover, .teams-dropdown a:focus, .about-dropdown a:hover, .about-dropdown a:focus, .development-dropdown a:hover, .development-dropdown a:focus { background:rgba(212,175,55,.16); color:#d4af37 !important; }
+  .teams-dropdown a:hover, .teams-dropdown a:focus, .about-dropdown a:hover, .about-dropdown a:focus, .development-dropdown a:hover, .development-dropdown a:focus { background:rgba(184,184,184,.16); color:#b8b8b8 !important; }
 
   @media (max-width:1040px) {
     body.menu-open { overflow:hidden; }
