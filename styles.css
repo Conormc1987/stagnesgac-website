@@ -164,3 +164,26 @@
 /* Consistent club naming in fixture displays */
 .club-display{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;vertical-align:middle;line-height:1.05}
 .club-display small{display:block;margin-top:.18em;font-family:inherit;font-size:.45em;font-weight:700;letter-spacing:.06em;line-height:1;text-transform:none;opacity:.72}
+
+
+/* HIIT2FIT logo in the site-wide header band */
+.site-header .nav>.brand{order:1}
+.site-header .nav>.nav-links{order:2}
+.site-header .nav>.button.white{order:3}
+.site-header .nav::after{
+  content:"";
+  order:4;
+  width:108px;
+  height:52px;
+  flex:0 0 108px;
+  background:url("assets/hiit2fit-logo.svg") center/contain no-repeat;
+  border-left:1px solid rgba(255,255,255,.18);
+  padding-left:16px
+}
+.site-header .nav>.mobile-toggle{order:5}
+@media(max-width:1040px){
+  .site-header .nav::after{width:88px;height:44px;flex-basis:88px;padding-left:10px}
+}
+@media(max-width:480px){
+  .site-header .nav::after{width:72px;height:40px;flex-basis:72px;padding-left:8px}
+}
