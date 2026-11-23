@@ -26,6 +26,28 @@
       line-height: 1.2;
     }
     .event-headline + p { margin-top: 0; }
+    .event.quiz-night {
+      background: #141414;
+      border: 3px solid #141414;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+    }
+    .quiz-night::after { content: none; }
+    .quiz-night h2 {
+      margin: 0 0 18px;
+      font-size: clamp(2.25rem, 8vw, 4.25rem);
+      font-weight: 900;
+      line-height: 1.05;
+    }
+    .quiz-night .quiz-details {
+      margin: 0 0 22px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: #fff;
+      color: #141414;
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      line-height: 1.45;
+    }
+    .quiz-night p:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
@@ -56,7 +78,12 @@
     <p>Friday 5 February 2027<br>Balmoral Hotel</p>
     <p>All player and member trophies from 2026 should be returned to the club in advance of the dinner. Further arrangements will be shared closer to the date.</p>
   </section>
-  <section class="event"><p class="eyebrow">Friday 27 November</p><h2>St Agnes Quiz Night</h2><p>Casement Social Club</p><p>Come along, support the club and enjoy a great night with the Aggies family.</p></section>
+  <section class="event quiz-night" aria-labelledby="quiz-night-title">
+    <h2 id="quiz-night-title">St Agnes Quiz Night</h2>
+    <p class="quiz-details"><strong>Friday 27 November · 7pm</strong><br>Casement Social Club</p>
+    <p><strong>Everyone welcome!</strong> Get down to Casement, bring your friends and family, and help us raise funds for St Agnes GAC. Your support helps keep Gaelic games going for our young Aggies and the wider club.</p>
+    <p>Round up a team and join us for a big night of questions, craic and friendly rivalry. Let’s fill Casement and finish the year on a high together. 🖤🤍</p>
+  </section>
   <p><strong>Aggies Abú! 🖤🤍</strong></p>
   <div class="actions" style="justify-content:center"><a class="button black" href="fixtures.html">Fixtures &amp; Training</a><a class="button outline-dark" href="weekly-updates.html">Older Weekly Updates</a></div>
 </div></section>
