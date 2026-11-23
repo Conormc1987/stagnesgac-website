@@ -18,6 +18,14 @@
     .photo-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0 38px}.photo-gallery figure{margin:0;background:#fff;border:5px solid #fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.18)}.photo-gallery img{display:block;width:100%;height:330px;object-fit:cover}.photo-gallery figure:nth-child(1){grid-column:1/-1}.photo-gallery figure:nth-child(1) img{height:420px}.photo-gallery figcaption{padding:13px 15px;font-weight:800;color:#152a45;background:linear-gradient(90deg,#e9f6ff,#fff)}@media(max-width:650px){.photo-gallery{grid-template-columns:1fr;gap:14px}.photo-gallery figure:nth-child(1){grid-column:auto}.photo-gallery img,.photo-gallery figure:nth-child(1) img{height:auto;max-height:520px;object-fit:cover}}
   
     .album-cta{margin-top:26px;padding:22px;border-radius:18px;text-align:center;background:linear-gradient(135deg,#fff7df,#ffeaf2);border:2px dashed #e8a5b5}.album-cta p{margin:0 0 14px}.album-button{display:inline-block;padding:14px 22px;border-radius:999px;background:#17304d;color:#fff!important;text-decoration:none;font-weight:900;box-shadow:0 7px 16px rgba(23,48,77,.18);transition:transform .2s ease,box-shadow .2s ease}.album-button:hover,.album-button:focus{transform:translateY(-2px);box-shadow:0 10px 22px rgba(23,48,77,.24)}
+    .event .event-headline {
+      margin: 0 0 10px;
+      color: #321020;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .event-headline + p { margin-top: 0; }
   </style>
 </head>
 <body>
@@ -40,10 +48,12 @@
     <p><a class="album-button" href="assets/st-agnes-agm-proposal-form-2026.jpg" download>Download AGM Proposal Form</a></p>
     <a href="assets/st-agnes-agm-proposal-form-2026.jpg"><img src="assets/st-agnes-agm-proposal-form-2026.jpg" alt="AGM Proposal Form with spaces for your proposal, name in capitals and signature" width="1179" height="1017" loading="lazy" style="display:block;width:100%;max-width:560px;height:auto;border-radius:8px"></a>
     <hr style="border:0;border-top:1px solid rgba(255,255,255,.25);margin:26px 0">
-    <p><strong>Save the Date · Annual St Stephen’s Day Match</strong><br>Saturday 26 December 2026<br>Woodlands 4G<br>Meet at 11:30am · Game finished by 1:00pm</p>
+    <h3 class="event-headline">Save the Date · Annual St Stephen’s Day Match</h3>
+    <p>Saturday 26 December 2026<br>Woodlands 4G<br>Meet at 11:30am · Game finished by 1:00pm</p>
     <p>It is the annual <strong>Under-35s v Over-35s</strong> match—expect a bit of craic, plenty of slagging and some terrible football on show! Come along for a brilliant festive club get-together and see which generation claims the bragging rights. 🖤🤍⚽</p>
     <hr style="border:0;border-top:1px solid rgba(255,255,255,.25);margin:26px 0">
-    <p><strong>St Agnes Club Awards Dinner</strong><br>Friday 5 February 2027<br>Balmoral Hotel</p>
+    <h3 class="event-headline">St Agnes Club Awards Dinner</h3>
+    <p>Friday 5 February 2027<br>Balmoral Hotel</p>
     <p>All player and member trophies from 2026 should be returned to the club in advance of the dinner. Further arrangements will be shared closer to the date.</p>
   </section>
   <section class="event"><p class="eyebrow">Friday 27 November</p><h2>St Agnes Quiz Night</h2><p>Casement Social Club</p><p>Come along, support the club and enjoy a great night with the Aggies family.</p></section>
